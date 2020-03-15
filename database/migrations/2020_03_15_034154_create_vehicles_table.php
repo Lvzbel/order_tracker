@@ -15,7 +15,12 @@ class CreateVehiclesTable extends Migration
     {
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('account_id');
+            $table->bigInteger('work_order');
             $table->timestamps();
+            $table->boolean('reshoots')->default(false);
+            $table->tinyInteger('reshoots_quantity')->nullable();
+            $table->text('notes')->nullable();
         });
     }
 
