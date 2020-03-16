@@ -17,6 +17,4 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('vehicle', function () {
-    return view('vehicle');
-});
+Route::get('vehicles', 'VehicleController@index');
