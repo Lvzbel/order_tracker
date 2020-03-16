@@ -37,7 +37,7 @@ class VehicleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        die(var_dump(request()->all()));
     }
 
     /**
