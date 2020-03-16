@@ -17,4 +17,6 @@ Route::get('/', function () {
     return view('home');
 });
 
+// Vehicles Routes
 Route::get('vehicles', 'VehicleController@index');
+Route::get('vehicles/create', 'VehicleController@create');
