@@ -14,7 +14,9 @@ class VehicleController extends Controller
      */
     public function index()
     {
-        //
+        $vehicles = Vehicle::latest()->get();
+        
+        return view('vehicles.index', ['vehicles' => $vehicles ]);
     }
 
     /**
