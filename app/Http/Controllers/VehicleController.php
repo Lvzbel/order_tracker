@@ -37,7 +37,15 @@ class VehicleController extends Controller
      */
     public function store(Request $request)
     {
-        die(var_dump(request()->all()));
+        $vehicle = new Vehicle;
+
+        $vehicle->work_order = request('work-order');
+        $vehicle->account_id = intval(request('account'));
+        $vehicle->notes = request('notes');
+
+        $vehicle->save();
+
+        return redirect('/vehicles');
     }
 
     /**
