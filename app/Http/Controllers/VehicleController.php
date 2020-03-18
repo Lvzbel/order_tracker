@@ -81,9 +81,17 @@ class VehicleController extends Controller
      * @param  \App\Vehicle  $vehicle
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Vehicle $vehicle)
+    public function update($vehicle)
     {
-        //
+        $vehicle = Vehicle::find($vehicle);
+
+        $vehicle->work_order = request('work-order');
+        $vehicle->account_id = intval(request('account'));
+        $vehicle->notes = request('notes');
+
+        $vehicle->save();
+
+        return redirect('/vehicles');
     }
 
     /**
