@@ -98,4 +98,13 @@ class VehicleController extends Controller
     {
         //
     }
+
+    public function validateVehicle()
+    {
+        return request()->validate([
+            'work_order' => 'required|digits:7',
+            'account_id' => 'required|digits:1',
+            'notes' => 'string'
+        ]);
+    }
 }
