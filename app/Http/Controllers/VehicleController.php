@@ -67,9 +67,11 @@ class VehicleController extends Controller
      * @param  \App\Vehicle  $vehicle
      * @return \Illuminate\Http\Response
      */
-    public function edit(Vehicle $vehicle)
+    public function edit($vehicle)
     {
-        //
+        $vehicle = Vehicle::find($vehicle);
+
+        return view('vehicles.edit', compact('vehicle'));
     }
 
     /**
@@ -79,11 +81,9 @@ class VehicleController extends Controller
      * @param  \App\Vehicle  $vehicle
      * @return \Illuminate\Http\Response
      */
-    public function update($vehicle)
+    public function update(Request $request, Vehicle $vehicle)
     {
-        $vehicle = Vehicle::find($vehicle);
-
-        return view('vehicles.edit', compact('vehicle'));
+        //
     }
 
     /**
