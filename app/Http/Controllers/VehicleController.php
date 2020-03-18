@@ -54,10 +54,8 @@ class VehicleController extends Controller
      * @param  \App\Vehicle  $vehicle
      * @return \Illuminate\Http\Response
      */
-    public function show($vehicle)
+    public function show(Vehicle $vehicle)
     {
-        $vehicle = Vehicle::find($vehicle);
-
         return view('vehicles.show', compact('vehicle'));
     }
 
@@ -67,10 +65,8 @@ class VehicleController extends Controller
      * @param  \App\Vehicle  $vehicle
      * @return \Illuminate\Http\Response
      */
-    public function edit($vehicle)
+    public function edit(Vehicle $vehicle)
     {
-        $vehicle = Vehicle::find($vehicle);
-
         return view('vehicles.edit', compact('vehicle'));
     }
 
@@ -81,10 +77,8 @@ class VehicleController extends Controller
      * @param  \App\Vehicle  $vehicle
      * @return \Illuminate\Http\Response
      */
-    public function update($vehicle)
+    public function update(Vehicle $vehicle)
     {
-        $vehicle = Vehicle::find($vehicle);
-
         $vehicle->work_order = request('work-order');
         $vehicle->account_id = intval(request('account'));
         $vehicle->notes = request('notes');
