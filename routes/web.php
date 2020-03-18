@@ -22,3 +22,4 @@ Route::get('vehicles', 'VehicleController@index');
 Route::post('vehicles', 'VehicleController@store');
 Route::get('vehicles/create', 'VehicleController@create');
 Route::get('vehicles/{vehicle}', 'VehicleController@show');
+Route::get('vehicles/{vehicle}/edit', 'VehicleController@update');
