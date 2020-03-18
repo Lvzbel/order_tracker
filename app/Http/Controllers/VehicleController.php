@@ -54,9 +54,11 @@ class VehicleController extends Controller
      * @param  \App\Vehicle  $vehicle
      * @return \Illuminate\Http\Response
      */
-    public function show(Vehicle $vehicle)
+    public function show($vehicle)
     {
-        //
+        $vehicle = Vehicle::find($vehicle);
+
+        return view('vehicles.show', compact('vehicle'));
     }
 
     /**
