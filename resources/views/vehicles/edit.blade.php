@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>Add New Vehicle</h1>
-    <form action="/vehicles" method="POST">
+  <form action="/vehicles/{{ $vehicle->id }}" method="POST">
       @csrf
       @method('PUT')
       <label for="work-order">Work Order</label>
