@@ -14,7 +14,7 @@
       </select>
 
       <label for="notes">Notes (optional)</label>
-      <input name="notes" id="notes" type="text">
+      <textarea name="notes" id="notes" type="text"></textarea>
 
       <button type="submit">Submit</button>
     </form>
