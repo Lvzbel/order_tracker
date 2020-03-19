@@ -39,7 +39,7 @@ class VehicleController extends Controller
     {
         $validatedInput = $this->validateVehicle();
 
-        return $validatedInput;
+        Vehicle::create($validatedInput);
 
         return redirect('/vehicles');
     }
