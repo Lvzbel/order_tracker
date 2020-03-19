@@ -75,11 +75,9 @@ class VehicleController extends Controller
      */
     public function update(Vehicle $vehicle)
     {
-        $vehicle->work_order = request('work-order');
-        $vehicle->account_id = intval(request('account'));
-        $vehicle->notes = request('notes');
+        $validatedInput = $this->validateVehicle();
 
-        $vehicle->save();
+        $vehicle->update($validatedInput);
 
         return redirect('/vehicles');
     }
