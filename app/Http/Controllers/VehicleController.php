@@ -37,13 +37,9 @@ class VehicleController extends Controller
      */
     public function store(Request $request)
     {
-        $vehicle = new Vehicle;
+        $validatedInput = $this->validateVehicle();
 
-        $vehicle->work_order = request('work-order');
-        $vehicle->account_id = intval(request('account'));
-        $vehicle->notes = request('notes');
-
-        $vehicle->save();
+        return $validatedInput;
 
         return redirect('/vehicles');
     }
@@ -104,7 +100,7 @@ class VehicleController extends Controller
         return request()->validate([
             'work_order' => 'required|digits:7',
             'account_id' => 'required|digits:1',
-            'notes' => 'string'
+            'notes' => 'nullable|string'
         ]);
     }
 }
